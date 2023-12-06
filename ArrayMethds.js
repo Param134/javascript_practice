@@ -34,3 +34,34 @@ const nameOccurrences = names.reduce((accumulator, currentValue) => {
 console.log(nameOccurrences);
 // Output: { Alice: 3, Bob: 1, Charlie: 1, David: 1 }
 
+//Grouping Objects by Property:
+
+const students = [
+    { name: 'Alice', grade: 'A' },
+    { name: 'Bob', grade: 'B' },
+    { name: 'Charlie', grade: 'A' },
+    { name: 'David', grade: 'C' },
+    { name: 'Eva', grade: 'B' }
+];
+
+const groupedByGrade = students.reduce((accumulator, student) => {
+    const { grade, name } = student;
+    (accumulator[grade] || (accumulator[grade] = [])).push(name);
+    return accumulator;
+}, {});
+
+console.log(groupedByGrade);
+// Output: { A: ['Alice', 'Charlie'], B: ['Bob', 'Eva'], C: ['David'] }
+
+
+// Finding Maximum Value in an Array:
+
+const values = [8, 3, 11, 5, 1];
+
+const max = values.reduce((maxValue, currentValue) => {
+    return Math.max(maxValue, currentValue);
+}, values[0]);
+
+console.log(max); // Output: 11
+
+
