@@ -13,3 +13,4 @@ const findDuplicate = (nums) => {
 
 const numbers = [1, 3, 4, 2, 2];
 console.log(findDuplicate(numbers)); 
+//check branch pull request test
